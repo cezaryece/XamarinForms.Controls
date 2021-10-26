@@ -1,0 +1,17 @@
+﻿<ContentView x:Class="XamarinForms.Controls.Basic.TwoCombosControl"
+			 xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:basic="clr-namespace:XamarinForms.Controls.Basic;assembly=XamarinForms.Controls"
+			 xmlns:data="clr-namespace:XamarinForms.Controls.Data;assembly=XamarinForms.Controls">
+	<ContentView.BindingContext>
+		<data:TwoCombosViewModel />
+	</ContentView.BindingContext>
+	<Grid x:Name="MainGrid">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<basic:ComboBoxControl3Rows x:Name="C1Combo" Grid.Row="0" SelectedIndex="{Binding Combo1Index}" />
+		<basic:ComboBoxControl3Rows x:Name="C2Combo" Grid.Row="1" SelectedIndex="{Binding Combo2Index}" />
+	</Grid>
+</ContentView>

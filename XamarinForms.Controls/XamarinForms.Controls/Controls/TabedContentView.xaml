@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView
+	x:Class="XamarinForms.Controls.Controls.TabedContentView"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+	<StackLayout>
+		<StackLayout x:Name="CaruselLayout" VerticalOptions="StartAndExpand">
+			<StackLayout.GestureRecognizers>
+				<PanGestureRecognizer PanUpdated="PanGestureRecognizer_OnPanUpdated" TouchPoints="1" />
+			</StackLayout.GestureRecognizers>
+		</StackLayout>
+		<ScrollView
+			x:Name="Scroll"
+			Padding="5"
+			HorizontalOptions="FillAndExpand"
+			MinimumHeightRequest="40"
+			Orientation="Horizontal"
+			VerticalOptions="End">
+			<Grid
+				x:Name="TabsGrid"
+				ColumnSpacing="2"
+				HorizontalOptions="FillAndExpand" />
+		</ScrollView>
+	</StackLayout>
+</ContentView>

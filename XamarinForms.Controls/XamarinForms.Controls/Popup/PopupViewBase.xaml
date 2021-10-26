@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView
+	x:Class="XamarinForms.Controls.Popup.PopupViewBase"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+	<Grid
+		x:Name="OpacityGrid"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="10" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="10" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="10" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="10" />
+		</Grid.ColumnDefinitions>
+		<Grid
+			x:Name="MainGrid"
+			Grid.Row="1"
+			Grid.Column="1"
+			Padding="0"
+			VerticalOptions="CenterAndExpand">
+			<BoxView x:Name="BackgroundBox" />
+			<StackLayout
+				x:Name="PopupStack"
+				Padding="15"
+				Spacing="20"
+				VerticalOptions="FillAndExpand">
+				<ContentView x:Name="Header" />
+				<StackLayout VerticalOptions="FillAndExpand">
+					<ScrollView
+						IsClippedToBounds="True"
+						Orientation="Vertical"
+						VerticalOptions="FillAndExpand">
+						<StackLayout VerticalOptions="FillAndExpand">
+							<ContentView x:Name="Body" />
+						</StackLayout>
+					</ScrollView>
+				</StackLayout>
+				<ContentView x:Name="Footer" />
+			</StackLayout>
+		</Grid>
+	</Grid>
+</ContentView>

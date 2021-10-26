@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+	x:Class="TestLib.TestPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:basic="clr-namespace:AT.XamarinControls.Basic;assembly=AT.XamarinControls"
+	xmlns:controls="clr-namespace:AT.XamarinControls.Controls;assembly=AT.XamarinControls"
+	xmlns:testLib="clr-namespace:TestLib;assembly=TestLib"
+	BackgroundColor="Blue">
+	<ContentPage.BindingContext>
+		<testLib:TestLibViewModel />
+	</ContentPage.BindingContext>
+	
+		<ScrollView
+			HorizontalOptions="FillAndExpand"
+			Orientation="Vertical"
+			VerticalOptions="FillAndExpand">
+
+			<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<!--  FONTY  -->
+			<Label
+				FontFamily="Lucida Console"
+				FontSize="40"
+				Text="QWERTY Lucida Console" />
+			<Label
+				FontFamily="Trebuchet MS"
+				FontSize="40"
+				Text="QWERTY Trebushet MS" />
+			<Label
+				FontFamily="Verdana"
+				FontSize="40"
+				Text="QWERTY Verdana" />
+			<!--<Label Text="QWERTY RobotoCondenset" FontSize="40" FontFamily="/Assets/Fonts/RobotoCondensed.ttf#Roboto Condensed"/>-->
+			<Label FontSize="40" Text="QWERTY standard" />
+			<basic:LabelExtended
+				FontSize="40"
+				Text="QWERTY LabelExtended standard"
+				TextColor="White" />
+			<basic:LabelExtended
+				FontAsset="RobotoCondensed.ttf"
+				FontName="Roboto Condensed"
+				FontSize="40"
+				Text="QWERTY LabelExtended Roboto"
+				TextColor="White" />
+
+			<!--  SKANOWANIE ZXING  -->
+			<!--<StackLayout BackgroundColor="Red" HorizontalOptions="FillAndExpand">
+			<Button Text="Skanuj" Clicked="Button_OnClicked"/>
+			<Label Text="{Binding CodeType, StringFormat='Typ:{0}'}"/>
+			<Label Text="{Binding CodeText, StringFormat='Kod:{0}'}"/>
+		</StackLayout>
+		<controls:EntryWithBarcode Text="{Binding CodeText}" Type="{Binding CodeType}" EntryBackground="White" TextColor="Blue" FontSize="18" EntryButtonOrientation="Horizontal"/>-->
+
+
+			<basic:CheckboxExtended
+				CheckedTextColor="Red"
+				DefaultText="tekst w Checkbox"
+				DefaultTextColor="White"
+				FontSize="18" />
+			<Image x:Name="Image1"
+				Aspect="AspectFit"
+				HeightRequest="100"
+				Source="{testLib:ImageResource TestLib.Images.View.png}"
+				WidthRequest="100" />
+			<Slider x:Name="SizeSlider"
+				Maximum="60"
+				Minimum="1"
+				Value="24" />
+			<basic:CheckboxExtended
+				Checked="{Binding Enabled}"
+				DefaultText="Duży tekst w Checkbox dla sprawdzenia czy jest dobra wysokość kontrolki"
+				DefaultTextColor="White"
+				FontSize="{Binding Source={x:Reference SizeSlider}, Path=Value}" />
+			<Switch IsToggled="{Binding Enabled}" />
+			<basic:FixedSizeButton
+				BackgroundColor="Transparent"
+				ClickedHandler="On_Clicked"
+				HeightRequest="50"
+				HorizontalOptions="CenterAndExpand"
+				Image="{testLib:ImageResource TestLib.Images.info.png}"
+				IsEnabled="True"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="50" />
+			<!--
+			<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+				<basic:CheckListControl x:Name="EventsControl" Items="{Binding EventsItems}" SelectedItems="{Binding SelectedEvents}" IsEnabled="{Binding Enabled}" TextColor="Aqua" FontSize="20"/>
+					<ListView x:Name="DeviceList" ItemsSource="{Binding ListItems}" HasUnevenRows="True" HorizontalOptions="FillAndExpand" IsEnabled="{Binding Enabled}">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+									<StackLayout Spacing="5">
+										<Label Text="{Binding Time}" BackgroundColor="{Binding BackGround}" />
+										<basic:CheckboxExtended Checked="{Binding InCorrectState}" DefaultText="{Binding Time}" CheckedText="Correct"
+															   DefaultTextColor="{Binding TextColor}" VerticalOptions="FillAndExpand" IsEnabled="{Binding Source={x:Reference DeviceList}, Path=IsEnabled}"/>
+										<basic:FixedSizeButton BackgroundColor="{Binding BackGround}" HeightRequest="40" WidthRequest="150"
+															   Text="{Binding Time, StringFormat='{0}'}" TextColor="{Binding TextColor}"  IsEnabled="{Binding Source={x:Reference DeviceList}, Path=IsEnabled}"/>
+										<basic:DecimalUpDown TopLabelText="{Binding Time}" Value="{Binding Time.Second,Mode=OneWay}" IsEnabled="{Binding Source={x:Reference DeviceList}, Path=IsEnabled}" />
+									</StackLayout>
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+
+				<basic:CheckboxExtended FontSize="32" Checked="{Binding Enabled}"
+									   DefaultText="Duzy tekst w Checkbox dla sprawdzenia czy jest dobra wysokość kontrolki" CheckedText="Enabled"
+									   DefaultTextColor="White" VerticalOptions="FillAndExpand" />
+				<basic:FixedSizeButton Text="Items" BackgroundColor="Blue" TextColor="White" HeightRequest="50" WidthRequest="150"
+									   FontSize="25" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"
+									   ClickedHandler="On_Clicked" />
+				<basic:CheckboxExtended FontSize="32" Checked="{Binding Enabled}"
+									   DefaultText="Duzy tekst w Checkbox dla sprawdzenia czy jest dobra wysokość kontrolki" CheckedText="Enabled"
+									   DefaultTextColor="White" VerticalOptions="FillAndExpand" />
+				<basic:DecimalUpDown TopLabelText="toplabel1" x:Name="PeriodControl"
+									 Value="{Binding DecimalValue}" Maximum="20" Minimum="0"
+									 ControlHeight="30" />
+				<basic:CheckboxExtended FontSize="38" Checked="{Binding Enabled}"
+									   DefaultText="Duzy tekst w Checkbox dla sprawdzenia czy jest dobra wysokość kontrolki" CheckedText="Enabled"
+									   DefaultTextColor="White" VerticalOptions="FillAndExpand" />
+				<basic:DecimalUpDown TopLabelText="toplabel2" x:Name="VolumeControl"
+									 Value="{Binding DecimalValue}" Maximum="{Binding Max}" Minimum="{Binding Min}"
+									 DecimalPlace="{Binding DecimalPlace}" Increment="{Binding Increment}" />
+				<basic:CheckboxExtended FontSize="32" Checked="{Binding Enabled}"
+									   DefaultText="Duzy tekst w Checkbox dla sprawdzenia czy jest dobra wysokość kontrolki" CheckedText="Enabled"
+									   DefaultTextColor="White" />
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+					<Label Text="mode" HorizontalOptions="StartAndExpand" />
+					<Entry Text="ab" WidthRequest="100" HorizontalOptions="End" />
+				</StackLayout>
+			</StackLayout>		-->
+		
+	</StackLayout>
+		</ScrollView>
+
+</ContentPage>

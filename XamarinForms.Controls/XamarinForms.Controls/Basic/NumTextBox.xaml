@@ -1,0 +1,9 @@
+﻿<ContentView
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="XamarinForms.Controls.Basic.NumTextBox">
+	<StackLayout HorizontalOptions="FillAndExpand">
+		<Entry x:Name="InputEntry" HorizontalTextAlignment="End" BackgroundColor="White" HorizontalOptions="FillAndExpand" Keyboard="Numeric" TextColor="Black" TextChanged="InputEntry_OnTextChanged" Unfocused="InputEntry_OnUnfocused"
+			   Completed="InputEntry_OnCompleted" />
+	</StackLayout>
+</ContentView>

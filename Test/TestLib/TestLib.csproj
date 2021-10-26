@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196"/>
+        <PackageReference Include="ZXing.Net.MobileX.Forms" Version="3.0.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\XamarinForms.Controls\XamarinForms.Controls\XamarinForms.Controls.csproj"/>
+    </ItemGroup>
+</Project>

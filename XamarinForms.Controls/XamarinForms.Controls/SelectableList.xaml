@@ -1,0 +1,18 @@
+﻿<ContentView x:Class="XamarinForms.Controls.SelectableList"
+			 xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:data="clr-namespace:XamarinForms.Controls.Data;assembly=XamarinForms.Controls">
+	<ContentView.BindingContext>
+		<data:SelectableListViewModel />
+	</ContentView.BindingContext>
+	<StackLayout x:Name="ListLayoutName">
+		<Label Text="{Binding Header}" FontAttributes="Bold" />
+		<ListView x:Name="ListName" ItemsSource="{Binding Items}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextCell Text="{Binding Name}" Detail="{Binding Details}" />
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentView>

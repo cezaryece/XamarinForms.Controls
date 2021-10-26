@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:basic="clr-namespace:XamarinForms.Controls.Basic;assembly=XamarinForms.Controls"
+			 x:Class="XamarinForms.Controls.Basic.CheckboxExtended" PropertyChanged="CheckboxExtended_OnPropertyChanged">
+	<!--<Grid x:Name="GridLayout" HorizontalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition>
+				<RowDefinition.Height>
+					<OnPlatform x:TypeArguments="GridLength" Android="*" WinPhone="Auto" />
+				</RowDefinition.Height>
+			</RowDefinition>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid x:Name="CheckGrid" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand">
+			<basic:LabelExtended x:Name="BoxLabel" />
+			<basic:LabelExtended x:Name="CheckLabel" />
+		</Grid>
+		<basic:LabelExtended Grid.Row="0" Grid.Column="1" x:Name="TextLabel" HorizontalOptions="FillAndExpand" />
+	</Grid>-->
+	<Grid x:Name="GridLayout">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<Grid x:Name="CheckGrid" HorizontalOptions="Start" BackgroundColor="Transparent" Grid.Column="0">
+			<basic:LabelExtended x:Name="BoxLabel" InputTransparent="True" />
+			<basic:LabelExtended x:Name="CheckLabel" InputTransparent="True" />
+		</Grid>
+		<basic:LabelExtended x:Name="TextLabel" HorizontalOptions="FillAndExpand" InputTransparent="True" Grid.Column="1" />
+	</Grid>
+</ContentView>

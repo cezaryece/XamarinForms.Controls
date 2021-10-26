@@ -1,0 +1,1 @@
+/home/czarek/RiderProjects/XamarinForms.Controls/XamarinForms.Controls/XamarinForms.Controls.Android/Resources/Resource.designer.cs

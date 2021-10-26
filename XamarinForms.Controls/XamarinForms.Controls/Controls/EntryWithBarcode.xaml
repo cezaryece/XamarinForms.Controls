@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView
+	x:Class="XamarinForms.Controls.Controls.EntryWithBarcode"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:basic="clr-namespace:XamarinForms.Controls.Basic;assembly=XamarinForms.Controls">
+	<StackLayout HorizontalOptions="FillAndExpand">
+		<StackLayout
+			x:Name="EntryButtonLayout"
+			HorizontalOptions="FillAndExpand"
+			Spacing="5">
+			<basic:EntryExtended
+				x:Name="CodeEntry"
+				BorderWidth="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="CenterAndExpand" />
+			<basic:FixedSizeButton
+				x:Name="ScanButton"
+				BorderWidth="1"
+				ClickedHandler="Button_OnClicked" />
+		</StackLayout>
+		<basic:LabelExtended x:Name="TypeLabel" HorizontalOptions="FillAndExpand" />
+	</StackLayout>
+
+</ContentView>

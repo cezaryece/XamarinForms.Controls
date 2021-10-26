@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView
+	x:Class="XamarinForms.Controls.Popup.PopupComboView"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:basic="clr-namespace:XamarinForms.Controls.Basic;assembly=XamarinForms.Controls">
+	<Grid x:Name="BorderGrid">
+		<StackLayout x:Name="BackgroundBox" Padding="5">
+			<basic:LabelExtended x:Name="PlaceHolder" VerticalTextAlignment="Center">
+				<basic:LabelExtended.GestureRecognizers>
+					<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Label_OnTapped" />
+				</basic:LabelExtended.GestureRecognizers>
+			</basic:LabelExtended>
+		</StackLayout>
+	</Grid>
+</ContentView>

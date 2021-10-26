@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="XamarinForms.Controls.Basic.StringPreviewControl">
+	<StackLayout Orientation="Vertical">
+		<StackLayout x:Name="MainStack">
+			<Label x:Name="StringLabel" />
+			<Label x:Name="StringValue" />
+		</StackLayout>
+		<BoxView x:Name="BoxBottomElement" />
+	</StackLayout>
+</ContentView>

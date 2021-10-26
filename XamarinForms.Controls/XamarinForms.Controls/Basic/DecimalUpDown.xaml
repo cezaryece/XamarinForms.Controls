@@ -1,0 +1,18 @@
+﻿<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:basic="clr-namespace:XamarinForms.Controls.Basic;assembly=XamarinForms.Controls"
+			 x:Class="XamarinForms.Controls.Basic.DecimalUpDown">
+	<StackLayout x:Name="ViewLayout" Spacing="0" Padding="0" VerticalOptions="FillAndExpand">
+		<basic:LabelExtended x:Name="TopLabel" />
+		<StackLayout x:Name="ControlLayout" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="2">
+			<basic:EntryExtended x:Name="InputEntry" HorizontalTextAlignment="Center" Keyboard="Numeric"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+								 Unfocused="InputEntry_OnUnfocused" Completed="InputEntry_OnCompleted" />
+			<StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
+				<basic:RoundedButton x:Name="Down" Text="-" HorizontalOptions="Start" Clicked="Down_Click" /><!--Text="&lt;"-->
+				<basic:RoundedButton x:Name="Up" Text="+" HorizontalOptions="End" Clicked="Up_Click" /><!--Text="&gt;"-->
+			</StackLayout>
+		</StackLayout>
+		<basic:LabelExtended x:Name="MinMaxLabel" />
+	</StackLayout>
+</ContentView>
